@@ -3,7 +3,7 @@ class TokenController < ActionController::API
     require 'uri'
     require 'net/http'
 
-    url = URI('https://dev-v88tfgqc.us.auth0.com/oauth/token')
+    url = URI('https://localhost:5000/private')
 
     http = Net::HTTP.new(url.host, url.port)
 
