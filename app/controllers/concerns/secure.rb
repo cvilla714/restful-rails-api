@@ -26,7 +26,7 @@ end
 
 SCOPES = {
   '/private' => nil,
-  '/private-scoped' => ['read:messages']
+  '/private-scoped' => ['read:users']
 }
 
   private
