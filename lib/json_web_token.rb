@@ -10,7 +10,7 @@ class JsonWebToken
                algorithms: 'RS256',
                iss: 'https://dev-v88tfgqc.us.auth0.com/',
                verify_iss: true,
-               aud: Rails.application.secrets.auth0_api_audience,
+               aud: 'this is the back end api connection',
                verify_aud: true) do |header|
       jwks_hash[header['kid']]
     end
