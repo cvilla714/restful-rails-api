@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/private', to: 'private#private'
+  get '/private', to: 'private#index'
   post '/private', to: 'privatec#create'
   get '/private-scope', to: 'private#private_scoped'
   # get '/', to: 'public_controller#public'
