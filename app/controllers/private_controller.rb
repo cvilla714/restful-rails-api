@@ -16,13 +16,4 @@ class PrivateController < ActionController::API
 
     render json: 'Hello from a private endpoint! You need to be authenticated to see this'
   end
-
-    access_token = request.headers['authorization'].split(' ').last
-    puts access_token
-    response = Faraday.get(url, { 'authorization' => 'Bearer' + access_token })
-    p response.status
-    p response.body
-    response = Faraday.get(url,
-                           { 'authorization' => 'Bearer' + access_token })
-  end
 end
