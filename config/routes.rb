@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get '/showinfo', to: 'display#index'
   get '/callapi', to: 'display#callapi'
 
-  get '/sendinfo', to: 'token#index'
-  get '/gettoken', to: 'token#test_api'
+  get '/gettoken', to: 'token#gettoken'
+  get '/callapi', to: 'token#callapi'
+  get '/testapi', to: 'token#testyourapi'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
