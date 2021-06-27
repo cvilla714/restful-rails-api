@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PrivateController < ActionController::API
+<<<<<<< HEAD
   def private
     # require 'net/http'
     # require 'json'
@@ -16,8 +17,19 @@ class PrivateController < ActionController::API
 
     render json: 'Hello from a private endpoint! You need to be authenticated to see this'
   end
+=======
+  def index
+    require 'faraday'
 
-  def private_scoped
-    render json: { message: 'Hello from a private endpoint! You need to be authenticated and have a scope of read:messages to see this.' }
+    url = 'https://dev-v88tfgqc.us.auth0.com/userinfo'
+>>>>>>> 38dcd2f6a7237ddbe5ec8a5fb633ab6e4cdf89d6
+
+    access_token = request.headers['authorization'].split(' ').last
+    puts access_token
+    response = Faraday.get(url, { 'authorization' => 'Bearer' + access_token })
+    p response.status
+    p response.body
+    response = Faraday.get(url,
+                           { 'authorization' => 'Bearer' + access_token })
   end
 end
